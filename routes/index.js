@@ -4,7 +4,8 @@ const router = express.Router() /* Get the router portion of that Express Varibl
 
 // With this router Varible now we can create our Routes
 router.get('/', (req, res) => {
-    res.send('Hello World !') // We just sending a response
+    // res.send('Hello World !') // We just sending a response
+    res.render('index') // rendering our view
 })
 
 /* We should export our router 
