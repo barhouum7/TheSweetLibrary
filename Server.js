@@ -1,3 +1,9 @@
+/* Here in order to load that Variable inside dotenv file
+    we just do a simple check If we are 
+    running in the production environment or Not... */
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 const express = require('express') /* Import Express from The Express Library that is installed using NPM */
 const app = express() /* Get the App Portion of Express */
 const expressLayouts = require('express-ejs-layouts') /* Get the Express Layouts package that is installed as Well */
@@ -12,6 +18,29 @@ app.set('layout', 'layouts/layout') /* hook up Express Layouts: Every Single fil
 app.use(expressLayouts) /* Here to Telling the Express Application that we want use Express Layouts */
 app.use(express.static('public')) /* Also Here to Telling the Express Application that where our public files are 
 going to be.. (our style sheets, javascript Files, etc...) */
+
+const mongoose = require('mongoose') /* Import Mongoose from The Mongoose Library that is installed already using NPM */
+
+/* Here we want to set up our connection
+        to be dependent upon our environment
+        because when we're developing we want
+        mangoose to connect to our local mongoDB Server
+        BUT when we have our app deployed we want to
+        connect it to a server that's on the web 
+        somewhere so in here we're going to pass
+        a string for the URL which going to come from 
+        our environment Variables.. */
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true /* Options for how we want to set up 
+    our MongoDB inside of our application.. */
+})
+
+const db = mongoose.connection /* Access the connection here.. */
+/* Here we just log if we're or are not connected to our database. */
+db.on('error', error => console.log(error))
+db.once('open', () => console.log('Connected successfully to Mongoose.'))
+
+
 app.use('/', indexRouter) /* Telling our Server 1-[ to pass our very Root of our App(From Where we Coming From) ] , 2-[ to use our indexRouter Reference Varible ] */
 
 
