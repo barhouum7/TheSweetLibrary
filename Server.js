@@ -16,7 +16,8 @@ app.set('view engine', 'ejs') /* Set my view Engine | In my Case I'm going to us
 app.set('views', __dirname + '/views') /* Setting where my views are going to be coming from */
 app.set('layout', 'layouts/layout') /* hook up Express Layouts: Every Single file is going to be put inside of this Layout file */
 app.use(expressLayouts) /* Here to Telling the Express Application that we want use Express Layouts */
-app.use(express.static('public')) /* Also Here to Telling the Express Application that where our public files are 
+app.use(express.static('public'))
+/* Also Here to Telling the Express Application that where our public files are 
 going to be.. (our style sheets, javascript Files, etc...) */
 
 const mongoose = require('mongoose') /* Import Mongoose from The Mongoose Library that is installed already using NPM */
@@ -32,8 +33,9 @@ const mongoose = require('mongoose') /* Import Mongoose from The Mongoose Librar
         our environment Variables.. */
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true /* Options for how we want to set up 
-    our MongoDB inside of our application.. */
+    useUnifiedTopology: true
+    /* Options for how we want to set up 
+       our MongoDB inside of our application.. */
 })
 
 const db = mongoose.connection /* Access the connection here.. */
