@@ -2,10 +2,10 @@
   "name": "thesweetlibrary",
   "version": "1.0.0",
   "description": "Library Web Application System",
-  "main": "myServer.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node myServer.js",
-    "devStart": "nodemon myServer.js"
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",

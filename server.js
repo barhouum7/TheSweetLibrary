@@ -1,16 +1,18 @@
+const express = require('express') /* Import Express from The Express Library that is installed using NPM */
+const app = express() /* Get the App Portion of Express */
+const expressLayouts = require('express-ejs-layouts') /* Get the Express Layouts package that is installed as Well */
+
 /* Here in order to load that Variable inside dotenv file
     we just do a simple check If we are 
     running in the production environment or Not... */
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-const express = require('express') /* Import Express from The Express Library that is installed using NPM */
-const app = express() /* Get the App Portion of Express */
-const expressLayouts = require('express-ejs-layouts') /* Get the Express Layouts package that is installed as Well */
+
 
 /* Importing our index router here 
 so then we will be able to use it through our server*/
-const indexRouter = require('./routes/index')
+const indexRouter = require('./index')
 
 app.set('view engine', 'ejs') /* Set my view Engine | In my Case I'm going to use the EJS as my view engine */
 app.set('views', __dirname + '/views') /* Setting where my views are going to be coming from */
