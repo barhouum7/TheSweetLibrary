@@ -50,4 +50,9 @@ db.once('open', () => console.log('Connected successfully to Mongoose.'))
 app.use('/', indexRouter) /* Telling our Server 1-[ to pass our very Root of our App(From Where we Coming From) ] , 2-[ to use our indexRouter Reference Varible ] */
 
 
-app.listen(process.env.PORT || 3000) /* Telling to our App that we want to Listening on Certain PORT */
+app.listen(process.env.PORT || 3000, (error) => {
+    if (error)
+        console.log('\nERROR! Something Went Wrong.\n')
+    else
+        console.log('\nServer is listening on PORT: 3000\n')
+}) /* Telling to our App that we want to Listening on Certain PORT */
