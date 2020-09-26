@@ -2,20 +2,20 @@
 const express = require('express')
 const router = express.Router() /* Get the router portion of that Express Varible */
 
-// For All Authers Route
+// For All Authors Route
 router.get('/', (req, res) => {
     // res.send('Hello World !') // We just sending a response
-    res.render('authers/index') // rendering our view
+    res.render('authors/index') // rendering our view
 })
 
-// For New Auther Route
+// For New Author Route
 router.get('/new', (req, res) => {
-    res.render('authers/new')
+    res.render('authors/new')
 })
 
-// For Creating Our Auther Route
+// For Creating Our Author Route
 router.post('/', (req, res) => {
-    res.send('Auther Route is Created.')
+    res.send('Author Route is Created.')
 })
 
 /* We should export our router 
