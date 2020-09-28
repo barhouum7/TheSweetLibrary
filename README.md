@@ -1,5 +1,5 @@
 # MySweetLibrary
-In this project, I will be creating a **_library_** application called **_TheSweetLibrary_**.
+In this project, I will be creating a **_MERN stack library_** application called **_TheSweetLibrary_**.
 # I Will Put The Project Notes Here ->
 ###### Click Here For Demo: https://barhouum7.github.io/TheSweetLibrary.github.io/
 ---
@@ -9,6 +9,9 @@ In this project, I will be creating a **_library_** application called **_TheSwe
 - [x] Css Preprocessor: <kbd>SASS</kbd>
 - [x] JavaScript
 - [x] MongoDB
+- [x] Mongoose
 - [x] Express
+- [x] ejs-templetes
+- [x] MVC
 - [x] NodeJs
 ---
