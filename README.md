@@ -11,7 +11,7 @@ In this project, I will be creating a **_MERN stack library_** application calle
 - [x] MongoDB
 - [x] Mongoose
 - [x] Express
-- [x] ejs-templetes
+- [x] ejs-templates
 - [x] MVC
 - [x] NodeJs
 ---
