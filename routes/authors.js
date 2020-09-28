@@ -1,6 +1,8 @@
 /* Creating the index Route */
 const express = require('express')
+const author = require('../models/author')
 const router = express.Router() /* Get the router portion of that Express Varible */
+const Author = require('../models/author')
 
 // For All Authors Route
 router.get('/', (req, res) => {
@@ -10,7 +12,9 @@ router.get('/', (req, res) => {
 
 // For New Author Route
 router.get('/new', (req, res) => {
-    res.render('authors/new')
+    res.render('authors/new', {
+        author: new Author()
+    })
 })
 
 // For Creating Our Author Route
