@@ -19,7 +19,7 @@ router.get('/new', (req, res) => {
 
 // For Creating Our Author Route
 router.post('/', (req, res) => {
-    res.send('Author Route is Created.')
+    res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
 })
 
 /* We should export our router 

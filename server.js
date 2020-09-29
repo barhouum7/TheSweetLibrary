@@ -8,7 +8,10 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express') /* Import Express from The Express Library that is installed using NPM */
 const app = express() /* Get the App Portion of Express */
 const expressLayouts = require('express-ejs-layouts') /* Get the Express Layouts package that is installed as Well */
-
+const bodyParser = require('body-parser')
+/* Import the body-parser Library 
+which is going to make it incredibly easy to access 
+the different input elements from our actual server..*/
 
 
 /* Importing our index router here 
@@ -23,6 +26,10 @@ app.use(expressLayouts) /* Here to Telling the Express Application that we want 
 app.use(express.static('public'))
 /* Also Here to Telling the Express Application that where our public files are 
 going to be.. (our style sheets, javascript Files, etc...) */
+app.use(bodyParser.urlencoded({
+    limit: '10mb',
+    extended: false
+}))
 
 const mongoose = require('mongoose') /* Import Mongoose from The Mongoose Library that is installed already using NPM */
 
