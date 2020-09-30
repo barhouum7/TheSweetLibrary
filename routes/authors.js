@@ -23,7 +23,10 @@ router.post('/', (req, res) => {
         name: req.body.authorName
     })
     author.save((err, newAuthor) => {
-
+        err ? res.render('authors/new', {
+            author: author,
+            errorMessage: 'ERROR Creating Author!'
+        }) : /* res.redirect(`authors/${newAuthor.id}`) */ res.redirect('authors')
     })
     res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
 })
