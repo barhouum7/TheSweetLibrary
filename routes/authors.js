@@ -19,6 +19,12 @@ router.get('/new', (req, res) => {
 
 // For Creating Our Author Route
 router.post('/', (req, res) => {
+    const author = new Author({
+        name: req.body.authorName
+    })
+    author.save((err, newAuthor) => {
+
+    })
     res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
 })
 
