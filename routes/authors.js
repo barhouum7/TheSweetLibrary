@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
             errorMessage: 'ERROR Creating Author!'
         }) : /* res.redirect(`authors/${newAuthor.id}`) */ res.redirect('authors')
     })
-    res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
+    // res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
 })
 
 /* We should export our router 
