@@ -18,17 +18,33 @@ router.get('/new', (req, res) => {
 })
 
 // For Creating Our Author Route
-router.post('/', (req, res) => {
+/* UPDATE THE CODE:  
+    In order to make it a little bit cleaner
+    we're going to use async await 
+    for all of the functions */
+router.post('/', async (req, res) => {
     const author = new Author({
         name: req.body.authorName
     })
-    author.save((err, newAuthor) => {
-        err ? res.render('authors/new', {
+    // Wraping my code inside try-catch block ..
+    try {
+        const newAuthor = await author.save()
+        /* res.redirect(`authors/${newAuthor.id}`) */
+        res.redirect('authors')
+    } catch {
+        res.render('authors/new', {
             author: author,
             errorMessage: 'ERROR Creating Author!'
-        }) : /* res.redirect(`authors/${newAuthor.id}`) */ res.redirect('authors')
-    })
-    // res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
+        })
+    }
+
+    // author.save((err, newAuthor) => {
+    //     err ? res.render('authors/new', {
+    //         author: author,
+    //         errorMessage: 'ERROR Creating Author!'
+    //     }) : /* res.redirect(`authors/${newAuthor.id}`) */ res.redirect('authors')
+    // })
+    // // res.send('- Author Route is Created!<br /><br />- Author Name is: ' + req.body.authorName)
 })
 
 /* We should export our router 
