@@ -1,13 +1,19 @@
 /* Creating the index Route */
 const express = require('express')
-const author = require('../models/author')
 const router = express.Router() /* Get the router portion of that Express Varible */
 const Author = require('../models/author')
 
 // For All Authors Route
-router.get('/', (req, res) => {
-    // res.send('Hello World !') // We just sending a response
-    res.render('authors/index') // rendering our view
+router.get('/', async (req, res) => {
+    try {
+        const authors = await Author.find({} /* This means that we have no conditions, and we just pass to it an empty JavaScript Object */ )
+        /* res.send('Hello World !') */ // We just sending a response
+        res.render('authors/index', {
+            authors: authors
+        }) // rendering our view
+    } catch {
+        res.redirect('/')
+    }
 })
 
 // For New Author Route
