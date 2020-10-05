@@ -5,11 +5,16 @@ const Author = require('../models/author')
 
 // For All Authors Route
 router.get('/', async (req, res) => {
+    let searchOptions = {}
+    if (req.query.name != null && req.query.name !== '') {
+        searchOptions.name = new RegExp(req.query.name, 'i' /* i == insensitive */ )
+    }
     try {
-        const authors = await Author.find({} /* This means that we have no conditions, and we just pass to it an empty JavaScript Object */ )
+        const authors = await Author.find(searchOptions /* {} <-- This means that If we have no conditions, we just pass to it an empty JavaScript Object */ )
         /* res.send('Hello World !') */ // We just sending a response
         res.render('authors/index', {
-            authors: authors
+            authors: authors,
+            searchOptions: req.query
         }) // rendering our view
     } catch {
         res.redirect('/')
