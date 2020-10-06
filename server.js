@@ -18,6 +18,7 @@ the different input elements from our actual server..*/
 so then we will be able to use it through our server*/
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
 app.set('view engine', 'ejs') /* Set my view Engine | In my Case I'm going to use the EJS as my view engine */
 app.set('views', __dirname + '/views') /* Setting where my views are going to be coming from */
@@ -57,6 +58,7 @@ db.once('open', () => console.log('Connected successfully to Mongoose.'))
 
 app.use('/', indexRouter) /* Telling our Server 1-[ to pass our very Root of our App(From Where we Coming From) ] , 2-[ to use our indexRouter Reference Varible ] */
 app.use('/authors', authorRouter) /* Telling our Server 1-[ to pass our very Root of our App(From Where we Coming From) ] , 2-[ to use our indexRouter Reference Varible ] */
+app.use('/books', bookRouter)
 
 
 app.listen(process.env.PORT || 3000, (error) => {
