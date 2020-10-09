@@ -2,6 +2,7 @@
 const express = require('express')
 const router = express.Router() /* Get the router portion of that Express Varible */
 const Book = require('../models/book')
+const Author = require('../models/author')
 
 // For All Books Route
 router.get('/', async (req, res) => {
@@ -23,11 +24,17 @@ router.get('/', async (req, res) => {
 })
 
 // For New Book Route
-router.get('/new', (req, res) => {
-    res.send('New Book!')
-    // res.render('authors/new', {
-    //     author: new Author()
-    // })
+router.get('/new', async (req, res) => {
+    try {
+        const authors = await Author.find({})
+        const book = new Book()
+        res.render('books/new', {
+            authors: authors,
+            book: book
+        })
+    } catch {
+        res.redirect('/books')
+    }
 })
 
 // For Creating Our Book Route
