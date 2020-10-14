@@ -5,7 +5,7 @@
 <a href="https://github.com/barhouum7/TheSweetLibrary/blame/master/LICENSE"><img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="Build" data-canonical-src="https://img.shields.io/packagist/l/doctrine/orm.svg" style="max-width:100%;"></a></p>
 
 <h2>🌟 <a href="https://github.com/barhouum7/TheSweetLibrary/blame/master/LICENSE">TheSweetLibrary V1.0</a> 🌟</h2>
-###### In this project, I will be creating a <b><i>MERN stack library</i></b> application called <b><i>TheSweetLibrary</i></b>
+###### In this project, I will be creating a MERN stack library application called TheSweetLibrary
 
 ###### Click Here For Demo: https://thesweetlibrary.herokuapp.com/
 ---
