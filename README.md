@@ -5,6 +5,7 @@
 <a href="https://github.com/barhouum7/TheSweetLibrary/blame/master/LICENSE"><img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="Build" data-canonical-src="https://img.shields.io/packagist/l/doctrine/orm.svg" style="max-width:100%;"></a></p>
 
 <h2>🌟 <a href="https://github.com/barhouum7/TheSweetLibrary/blame/master/LICENSE">TheSweetLibrary V1.0</a> 🌟</h2>
+
 ###### In this project, I will be creating a MERN stack library application called TheSweetLibrary
 
 ###### Click Here For Demo: https://thesweetlibrary.herokuapp.com/
@@ -23,7 +24,7 @@
 ---
 <h2>Screenshots</h2>
 
-<hr>
+
 <h2>BUG ?</h2>
 <ul><li>Go to the <a href="https://github.com/barhouum7/TheSweetLibrary/issues">issue</a> section</li></ul>
 <ul><li>Click on New issue</li></ul>
@@ -31,5 +32,5 @@
 <ul><li>Feel free and submit <a href="https://github.com/barhouum7/TheSweetLibrary/issues">new issue</a> ✅</li></ul><hr>
 
 <h2>How To Reach Me? 📧</h2>
-<h3>If you would like to get in touch with me, Feel free to send me an email or you could find me on Twitter : </h3><br>E-mail: <a href="mailto:bb.med2000@gmail.com?Subject=Hello%20again" target="_top">Send Mail 📧</a><br>Twitter: <a href="https://twitter.com/MindH4Q3Rr">🐦</a>
+<h4>If you would like to get in touch with me, Feel free to send me an email or you could find me on Twitter : </h4><br>E-mail: <a href="mailto:bb.med2000@gmail.com?Subject=Hello%20again" target="_top">Send Mail 📧</a><br>Twitter: <a href="https://twitter.com/MindH4Q3Rr">🐦</a>
 <hr>
