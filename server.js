@@ -12,6 +12,7 @@ const bodyParser = require('body-parser')
 /* Import the body-parser Library 
 which is going to make it incredibly easy to access 
 the different input elements from our actual server..*/
+const PORT = process.env.PORT || 3000
 
 
 /* Importing our index router here 
@@ -61,8 +62,8 @@ app.use('/authors', authorRouter) /* Telling our Server 1-[ to pass our very Roo
 app.use('/books', bookRouter)
 
 
-app.listen(process.env.PORT || 3000, (error) => {
+app.listen(PORT, (error) => {
     error ?
-        console.log('\nERROR! Something Went Wrong.\n') :
-        console.log('\nServer is listening on PORT: 3000\n')
+        console.log(`\nERROR! Something Went Wrong.\n`) :
+        console.log(`\nServer is listening on PORT: $(PORT)\n`)
 }) /* Telling to our App that we want to Listening on Certain PORT */
