@@ -65,5 +65,5 @@ app.use('/books', bookRouter)
 app.listen(PORT, (error) => {
     error ?
         console.log(`\nERROR! Something Went Wrong.\n`) :
-        console.log(`\nServer is listening on PORT: $(PORT)\n`)
+        console.log(`\nServer is listening on PORT: ${PORT}\n`)
 }) /* Telling to our App that we want to Listening on Certain PORT */
